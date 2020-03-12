@@ -73,6 +73,7 @@ class _SignUp1State extends State<SignUp1> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
+
                           TextFormField(
                             controller: txtName,
                             cursorColor: Theme.of(context).cursorColor,
