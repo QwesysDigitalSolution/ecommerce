@@ -10,6 +10,7 @@ class SignUp1 extends StatefulWidget {
 }
 
 class _SignUp1State extends State<SignUp1> {
+
   TextEditingController txtName = new TextEditingController();
   TextEditingController txtMobile = new TextEditingController();
   TextEditingController txtAdharCard = new TextEditingController();
@@ -260,6 +261,7 @@ class _SignUp1State extends State<SignUp1> {
                                       ),
                                       Padding(
                                           padding: EdgeInsets.only(top: 10)),
+
                                       Center(
                                         child: cityLoading
                                             ? CircularProgressIndicator()
@@ -322,6 +324,8 @@ class _SignUp1State extends State<SignUp1> {
                                                 ),
                                               ),
                                       ),
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 10)),
                                       TextFormField(
                                         controller: txtName,
                                         cursorColor:
@@ -329,6 +333,7 @@ class _SignUp1State extends State<SignUp1> {
                                         decoration: InputDecoration(
                                           hintText: 'Enter Address',
                                           labelText: "Address",
+                                          border: OutlineInputBorder(),
                                           contentPadding: EdgeInsets.only(
                                             left: 20,
                                             right: 10,
@@ -605,13 +610,16 @@ class _SignUp1State extends State<SignUp1> {
                                                 ),
                                               ),
                                       ),
+                                      Padding(
+                                          padding: EdgeInsets.only(top: 10)),
                                       TextFormField(
                                         controller: txtName,
                                         cursorColor:
-                                            Theme.of(context).cursorColor,
+                                        Theme.of(context).cursorColor,
                                         decoration: InputDecoration(
                                           hintText: 'Enter Address',
                                           labelText: "Address",
+                                          border: OutlineInputBorder(),
                                           contentPadding: EdgeInsets.only(
                                             left: 20,
                                             right: 10,
@@ -665,4 +673,5 @@ class _SignUp1State extends State<SignUp1> {
       ),
     );
   }
+
 }
