@@ -72,6 +72,7 @@ class _SignUpState extends State<SignUp> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
+
                           TextFormField(
                             controller: txtName,
                             cursorColor: Theme.of(context).cursorColor,
@@ -82,7 +83,7 @@ class _SignUpState extends State<SignUp> {
                                 left: 20,
                                 right: 10,
                                 top: 18,
-                                bottom: 18,
+                                bottom: 5,
                               ),
                             ),
                             keyboardType: TextInputType.text,
@@ -98,7 +99,7 @@ class _SignUpState extends State<SignUp> {
                                 left: 20,
                                 right: 10,
                                 top: 18,
-                                bottom: 18,
+                                bottom: 5,
                               ),
                             ),
                             maxLength: 10,
@@ -114,11 +115,12 @@ class _SignUpState extends State<SignUp> {
                                 left: 20,
                                 right: 10,
                                 top: 18,
-                                bottom: 18,
+                                bottom: 5,
                               ),
                             ),
                             keyboardType: TextInputType.text,
                           ),
+
                           /*TextFormField(
                             controller: txtJobTitle,
                             cursorColor: Theme.of(context).cursorColor,
@@ -145,6 +147,7 @@ class _SignUpState extends State<SignUp> {
                             ),
                             keyboardType: TextInputType.text,
                           ),*/
+
                           TextFormField(
                             controller: txtDrivingLicence,
                             cursorColor: Theme.of(context).cursorColor,
@@ -155,7 +158,7 @@ class _SignUpState extends State<SignUp> {
                                 left: 20,
                                 right: 10,
                                 top: 18,
-                                bottom: 18,
+                                bottom: 5,
                               ),
                             ),
                             keyboardType: TextInputType.text,
@@ -240,6 +243,87 @@ class _SignUpState extends State<SignUp> {
                               ),
                             ),
                           ),
+                          Card(
+                            margin:
+                            EdgeInsets.only(left: 10, right: 10, top: 10),
+                            shape: RoundedRectangleBorder(
+                              //side: BorderSide(color: cnst.appcolor)),
+                              side: BorderSide(
+                                  width: 0.50,
+                                  color: cnst.app_primary_material_color),
+                              borderRadius: BorderRadius.circular(
+                                0.0,
+                              ),
+                            ),
+                            //margin: EdgeInsets.only(left: 20,right: 20),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              child: Column(
+                                children: <Widget>[
+                                  _imageUserPhoto == null
+                                      ? FadeInImage.assetNetwork(
+                                    placeholder: 'images/logo.png',
+                                    //image: UserData[0]["Photo"],
+                                    image: "",
+                                    width: 250.0,
+                                    height: 250.0,
+                                    fit: BoxFit.fill,
+                                  )
+                                      : Image.file(
+                                    File(_imageUserPhoto.path),
+                                    width: 250.0,
+                                    height: 250.0,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  Container(
+                                    width: MediaQuery.of(context).size.width,
+                                    margin: EdgeInsets.only(top: 10),
+                                    height: 48,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(0),
+                                      ),
+                                    ),
+                                    child: MaterialButton(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                        new BorderRadius.circular(0.0),
+                                      ),
+                                      color: cnst.app_primary_material_color,
+                                      minWidth:
+                                      MediaQuery.of(context).size.width,
+                                      onPressed: () {
+                                        //_profileImagePopup(context);
+                                      },
+                                      child: Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Icon(
+                                            Icons.camera_alt,
+                                            color: Colors.white,
+                                          ),
+                                          Padding(
+                                            padding:
+                                            const EdgeInsets.only(left: 10),
+                                            child: Text(
+                                              "Upload Adhar Card Photo",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 17.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
                           Card(
                             margin:
                                 EdgeInsets.only(left: 10, right: 10, top: 10),
@@ -335,6 +419,7 @@ class _SignUpState extends State<SignUp> {
                               ),
                             ),
                           ),
+
                         ],
                       ),
                     ),
